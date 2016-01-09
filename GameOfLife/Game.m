@@ -113,6 +113,18 @@
     }
 }
 
+- (BOOL)hasCellsAlive {
+    BOOL hasCellsAlive = NO;
+    for (NSUInteger i=0; i<[self.cells count]; i++) {
+        Cell *cell = [self cellAtIndex:i];
+        if (cell.state == CellStateAlive) {
+            hasCellsAlive = YES;
+        }
+    }
+    
+    return hasCellsAlive;
+}
+
 - (void)clearGame {
     for (NSUInteger i=0; i<self.rows*self.columns; i++) {
         [[self.cells objectAtIndex:i] setState:CellStateKilled];

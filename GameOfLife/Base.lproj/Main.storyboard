@@ -673,8 +673,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="629" height="510"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="TYu-AJ-fM6">
-                                <rect key="frame" x="0.0" y="91" width="629" height="419"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="ak1-YQ-TJB">
+                                <rect key="frame" x="0.0" y="0.0" width="629" height="91"/>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B2s-Cn-PMQ">
                                 <rect key="frame" x="14" y="43" width="94" height="32"/>
@@ -763,27 +763,27 @@
                         <constraints>
                             <constraint firstItem="TsW-G6-qTj" firstAttribute="width" secondItem="9sT-yf-ALz" secondAttribute="width" id="0RW-df-qlK"/>
                             <constraint firstItem="cRX-vL-sK0" firstAttribute="leading" secondItem="HXK-ub-AdK" secondAttribute="trailing" constant="8" id="1H9-KX-Cvu"/>
-                            <constraint firstAttribute="trailing" secondItem="TYu-AJ-fM6" secondAttribute="trailing" id="1zm-bx-rTO"/>
-                            <constraint firstItem="TYu-AJ-fM6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="338-gU-G0A"/>
                             <constraint firstItem="9sT-yf-ALz" firstAttribute="top" secondItem="B2s-Cn-PMQ" secondAttribute="bottom" constant="8" id="Cae-eq-cgz"/>
-                            <constraint firstItem="B2s-Cn-PMQ" firstAttribute="top" secondItem="TYu-AJ-fM6" secondAttribute="bottom" constant="20" id="GTE-m7-fR4"/>
                             <constraint firstItem="xwg-hP-rcr" firstAttribute="centerY" secondItem="TsW-G6-qTj" secondAttribute="centerY" id="HyL-1C-aUY"/>
                             <constraint firstItem="nQf-4O-q9b" firstAttribute="leading" secondItem="9sT-yf-ALz" secondAttribute="trailing" constant="8" id="JLW-QY-dfX"/>
                             <constraint firstItem="HXK-ub-AdK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B2s-Cn-PMQ" secondAttribute="trailing" constant="8" id="MQZ-xA-5ct"/>
                             <constraint firstItem="TsW-G6-qTj" firstAttribute="leading" secondItem="nQf-4O-q9b" secondAttribute="trailing" constant="8" id="OLI-bn-XIb"/>
                             <constraint firstItem="xwg-hP-rcr" firstAttribute="leading" secondItem="TsW-G6-qTj" secondAttribute="trailing" constant="8" id="PoQ-Yl-eEF"/>
-                            <constraint firstItem="TYu-AJ-fM6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Ry8-Tz-Oog"/>
+                            <constraint firstAttribute="bottom" secondItem="ak1-YQ-TJB" secondAttribute="bottom" id="QAL-KH-Vmg"/>
                             <constraint firstAttribute="bottom" secondItem="9sT-yf-ALz" secondAttribute="bottom" constant="20" id="SSH-fm-Il2"/>
                             <constraint firstItem="ZCq-h4-xCz" firstAttribute="centerY" secondItem="9sT-yf-ALz" secondAttribute="centerY" id="Z8Q-XK-qTx"/>
                             <constraint firstItem="PaW-eD-aNA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xwg-hP-rcr" secondAttribute="trailing" constant="8" id="bCe-WB-8rI"/>
                             <constraint firstAttribute="trailing" secondItem="PaW-eD-aNA" secondAttribute="trailing" constant="20" id="bu2-nT-IY0"/>
                             <constraint firstItem="cRX-vL-sK0" firstAttribute="centerY" secondItem="B2s-Cn-PMQ" secondAttribute="centerY" id="jdq-py-XGy"/>
+                            <constraint firstItem="ak1-YQ-TJB" firstAttribute="top" secondItem="B2s-Cn-PMQ" secondAttribute="top" constant="-20" id="jk4-H6-mw1"/>
                             <constraint firstItem="TsW-G6-qTj" firstAttribute="height" secondItem="9sT-yf-ALz" secondAttribute="height" id="ltI-7p-Cbz"/>
+                            <constraint firstAttribute="trailing" secondItem="ak1-YQ-TJB" secondAttribute="trailing" id="mCj-b9-Ugi"/>
                             <constraint firstItem="B2s-Cn-PMQ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="o9a-gH-KCn"/>
                             <constraint firstItem="ZCq-h4-xCz" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="qB7-Ev-dee"/>
                             <constraint firstItem="PaW-eD-aNA" firstAttribute="centerY" secondItem="xwg-hP-rcr" secondAttribute="centerY" id="qdF-yo-xqB"/>
                             <constraint firstItem="9sT-yf-ALz" firstAttribute="leading" secondItem="ZCq-h4-xCz" secondAttribute="trailing" constant="8" id="r2G-A4-j0H"/>
                             <constraint firstItem="HXK-ub-AdK" firstAttribute="centerY" secondItem="B2s-Cn-PMQ" secondAttribute="centerY" id="rTb-sb-P00"/>
+                            <constraint firstItem="ak1-YQ-TJB" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="tbq-eW-FUg"/>
                             <constraint firstItem="TsW-G6-qTj" firstAttribute="centerY" secondItem="nQf-4O-q9b" secondAttribute="centerY" id="veN-3W-jqD"/>
                             <constraint firstItem="nQf-4O-q9b" firstAttribute="centerY" secondItem="9sT-yf-ALz" secondAttribute="centerY" id="w6E-NB-JiA"/>
                             <constraint firstAttribute="trailing" secondItem="cRX-vL-sK0" secondAttribute="trailing" constant="20" id="ycY-5e-qIu"/>
@@ -791,8 +791,8 @@
                     </view>
                     <connections>
                         <outlet property="autoGameButton" destination="cRX-vL-sK0" id="eNl-ot-Cpp"/>
+                        <outlet property="buttonsView" destination="ak1-YQ-TJB" id="qBJ-hX-doT"/>
                         <outlet property="columnsTextField" destination="TsW-G6-qTj" id="pTk-xm-ZNY"/>
-                        <outlet property="gameView" destination="TYu-AJ-fM6" id="ixt-E0-oML"/>
                         <outlet property="loadPointsButton" destination="PaW-eD-aNA" id="6tq-KX-SwG"/>
                         <outlet property="nextStepButton" destination="HXK-ub-AdK" id="Qlh-gV-v75"/>
                         <outlet property="rowsTextField" destination="9sT-yf-ALz" id="eSP-sN-YB3"/>

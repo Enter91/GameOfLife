@@ -32,5 +32,6 @@
 
 - (void)nextStep:(void (^)(BOOL shouldStop))callback;
 - (void)clearGame;
+- (BOOL)hasCellsAlive;
 
 @end

@@ -12,7 +12,7 @@
 
 @interface ViewController ()
 
-@property (weak) IBOutlet NSView *gameView;
+//@property (weak) IBOutlet NSView *gameView;
 @property (weak) IBOutlet NSButton *startButton;
 @property (weak) IBOutlet NSButton *nextStepButton;
 @property (weak) IBOutlet NSButton *autoGameButton;
@@ -20,9 +20,11 @@
 @property (weak) IBOutlet NSTextField *columnsTextField;
 @property (weak) IBOutlet NSButton *saveBoardSizeButton;
 @property (weak) IBOutlet NSButton *loadPointsButton;
+@property (weak) IBOutlet NSView *buttonsView;
 
 @property (strong, nonatomic) Game *game;
 @property (strong, nonatomic) NSMutableArray *cellViews;
+@property (strong, nonatomic) NSView *gameView;
 
 @end
 
@@ -34,8 +36,6 @@
     [self.startButton setTitle:@"Start gry"];
     [self.autoGameButton.cell setState:NSOffState];
     [self.nextStepButton setEnabled:NO];
-    
-    [self.gameView setWantsLayer:YES];
     
     [self createBoard];
 }
@@ -51,7 +51,20 @@
         }
     }
     
-    [[self.gameView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    if (self.gameView) {
+        [self.gameView removeFromSuperview];
+        self.gameView = nil;
+    }
+    //    [[self.gameView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    self.gameView = [[NSView alloc] initWithFrame:NSZeroRect];
+    [self.gameView setWantsLayer:YES];
+    [self.gameView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:self.gameView];
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[gameView]-0-|" options:0 metrics:nil views:@{@"gameView" : self.gameView}]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[gameView]-0-[buttonsView]" options:0 metrics:nil views:@{@"gameView" : self.gameView, @"buttonsView" : self.buttonsView}]];
+    
     self.cellViews = nil;
     
     if (!self.cellViews) {
@@ -110,6 +123,11 @@
     [NSThread cancelPreviousPerformRequestsWithTarget:self selector:@selector(doNextStep:) object:nil];
     
     if (!self.game.isRunning) {
+        
+        if (![self.game hasCellsAlive]) {
+            return;
+        }
+        
         [self.startButton setTitle:@"Koniec gry"];
         if ([[self.autoGameButton cell] state] == NSOnState) {
             [self.nextStepButton setEnabled:NO];
